@@ -1,0 +1,1208 @@
+2024-09-21 09:00:57 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:00:57 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:00:57 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:01:00 - ERROR  - [<module>(): 45] - Error from app - No module named 'jwt'
+2024-09-21 09:01:22 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:01:22 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:01:22 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:01:24 - ERROR  - [<module>(): 45] - Error from app - No module named 'httpx'
+2024-09-21 09:01:59 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:01:59 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:01:59 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:03:33 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:03:33 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:03:33 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:04:25 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:04:25 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:04:25 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:05:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:05:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:05:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:05:33 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:05:33 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:05:33 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:08:07 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:08:07 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:08:07 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:10:06 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:10:06 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:10:06 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:11:26 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:11:26 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:11:26 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:14:30 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:14:30 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:14:30 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:15:30 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:15:30 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:15:30 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:15:37 - ERROR  - [fetch_app_data(): 39] - Failed to fetch app data
+
+2024-09-21 09:15:37 - ERROR  - [fetch_app_data(): 54] - Error while fetching app data: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 40, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:15:37 - ERROR  - [update_parameter(): 30] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 40, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\app_services.py", line 27, in update_parameter
+    response_messages = app_handler.fetch_app_data()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 55, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:16:24 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:16:24 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:16:24 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:16:35 - ERROR  - [fetch_app_data(): 40] - Failed to fetch app data
+
+2024-09-21 09:16:35 - ERROR  - [fetch_app_data(): 55] - Error while fetching app data: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 41, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:16:35 - ERROR  - [update_parameter(): 30] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 41, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\app_services.py", line 27, in update_parameter
+    response_messages = app_handler.fetch_app_data()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 56, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:20:02 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:20:02 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:20:02 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:20:36 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:20:36 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:20:36 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:21:15 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:21:15 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:21:15 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:21:51 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:21:51 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:21:51 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:22:19 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:22:19 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:22:19 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:25:45 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:25:45 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:25:45 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:28:04 - INFO   - [fetch_app_data(): 48] - Fetched App Data Successfully
+
+2024-09-21 09:28:04 - ERROR  - [fetch_app_data(): 54] - Error while fetching app data: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 49, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:28:04 - ERROR  - [update_parameter(): 30] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 49, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\app_services.py", line 27, in update_parameter
+    response_messages = app_handler.fetch_app_data()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 55, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:30:35 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:30:35 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:30:35 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:30:45 - INFO   - [fetch_app_data(): 49] - Fetched App Data Successfully
+
+2024-09-21 09:30:45 - ERROR  - [fetch_app_data(): 55] - Error while fetching app data: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 50, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-21 09:30:45 - ERROR  - [update_parameter(): 30] - exception from generate form json logic None
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 50, in fetch_app_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\app_services.py", line 27, in update_parameter
+    response_messages = app_handler.fetch_app_data()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\app_handler.py", line 56, in fetch_app_data
+    raise ValueError(self.response_messages)
+ValueError: None
+2024-09-21 09:31:59 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:31:59 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:31:59 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:32:09 - ERROR  - [update_parameter(): 30] - exception from generate form json logic 'dict' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\app_services.py", line 28, in update_parameter
+    return {'logs': [each for each in response_messages.strip().split('\n')]}
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'strip'
+2024-09-21 09:33:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:33:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:33:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-21 09:37:36 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-21 09:37:36 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-21 09:37:36 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:05:47 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:05:47 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:05:47 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:06:08 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:06:08 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:06:08 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:07:23 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:07:23 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:07:23 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:16:03 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:16:03 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:16:03 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:16:05 - ERROR  - [<module>(): 45] - Error from app - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2024-09-22 09:16:41 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:16:41 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:16:41 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:20:33 - ERROR  - [update_parameter(): 40] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template(parameter).csv'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 31, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template(parameter).csv'
+2024-09-22 09:22:04 - ERROR  - [update_parameter(): 40] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 31, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+2024-09-22 09:22:15 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:22:15 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:22:15 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:22:24 - ERROR  - [update_parameter(): 40] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 31, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+2024-09-22 09:25:25 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:25:25 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:25:25 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:25:33 - ERROR  - [update_parameter(): 41] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 32, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+2024-09-22 09:26:03 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:26:03 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:26:03 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:26:12 - ERROR  - [update_parameter(): 42] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 33, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+2024-09-22 09:27:03 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:27:03 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:27:03 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:27:11 - ERROR  - [update_parameter(): 43] - exception from generate form json logic [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 34, in update_parameter
+    with open(file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'assets\\template1.xlsx'
+2024-09-22 09:30:30 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:30:30 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:30:30 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:32:43 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:32:43 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:32:43 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:32:54 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 09:39:16 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:39:16 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:39:16 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:39:26 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 09:42:02 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:42:02 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:42:02 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:42:12 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 09:46:12 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:46:12 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:46:12 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:46:22 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 09:49:23 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 09:49:23 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 09:49:23 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 09:49:34 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:04:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:04:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:04:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:04:32 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:17:36 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:17:36 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:17:36 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:17:45 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:18:37 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:18:37 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:18:37 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:18:44 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:18:44 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:18:44 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:18:52 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:18:52 - ERROR  - [extract_parameter_data(): 65] - Error while extracting workflow data: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 48, in extract_parameter_data
+    group_df.append(group_np)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+2024-09-22 14:18:52 - ERROR  - [automate_parameter(): 38] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 48, in extract_parameter_data
+    group_df.append(group_np)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 66, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:18:52 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 48, in extract_parameter_data
+    group_df.append(group_np)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 66, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 39, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:21:15 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:21:15 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:21:15 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:21:24 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:22:13 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:22:13 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:22:13 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:22:22 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:22:22 - ERROR  - [extract_parameter_data(): 65] - Error while extracting workflow data: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    group_df.append(cell_value)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+2024-09-22 14:22:22 - ERROR  - [automate_parameter(): 38] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    group_df.append(cell_value)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 66, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:22:22 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    group_df.append(cell_value)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 66, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 39, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:22:48 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:22:48 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:22:48 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:22:58 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:22:58 - ERROR  - [extract_parameter_data(): 66] - Error while extracting workflow data: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    if cell_value:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2024-09-22 14:22:58 - ERROR  - [automate_parameter(): 38] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    if cell_value:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 67, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:22:58 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 49, in extract_parameter_data
+    if cell_value:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 32, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 67, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 39, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:24:22 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:24:22 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:24:22 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:24:30 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:28:20 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:28:20 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:28:20 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:28:29 - INFO   - [automate_parameter(): 27] - Initiated parameter automation
+2024-09-22 14:33:24 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:33:24 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:33:24 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:33:33 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:33:59 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:33:59 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:33:59 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:34:08 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:34:08 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:34:08 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:34:19 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:34:53 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:34:53 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:34:53 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:35:02 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:35:19 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:35:19 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:35:19 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:35:27 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:36:06 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:36:06 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:36:06 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:36:16 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:36:44 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:36:44 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:36:44 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:36:54 - INFO   - [automate_parameter(): 28] - Initiated parameter automation
+2024-09-22 14:36:54 - ERROR  - [extract_parameter_data(): 54] - Error while extracting parameter data: 'DataFrame' object has no attribute 'append'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 50, in extract_parameter_data
+    group_df.append(group_df)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+2024-09-22 14:36:54 - ERROR  - [automate_parameter(): 39] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 50, in extract_parameter_data
+    group_df.append(group_df)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 33, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 55, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:36:54 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 50, in extract_parameter_data
+    group_df.append(group_df)
+    ^^^^^^^^^^^^^^^
+  File "D:\Automation Code\digital-logbook-automation1\Automation\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'append'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 33, in automate_parameter
+    df = self.extract_parameter_data(merged_row_groups, df)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 55, in extract_parameter_data
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 40, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:38:59 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:38:59 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:38:59 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:39:08 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:40:22 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:40:22 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:40:22 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:40:32 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:40:59 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:40:59 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:40:59 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:41:08 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:41:08 - ERROR  - [convert_parameter_metadata_to_dict(): 72] - Error while converting workflow metadata to dict: 'float' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 68, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+2024-09-22 14:41:08 - ERROR  - [automate_parameter(): 40] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 68, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 73, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:41:08 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 68, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 73, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 41, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:41:31 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:41:31 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:41:31 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:42:41 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:42:41 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:42:41 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:43:11 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:43:11 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:43:11 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:43:19 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:43:19 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:43:19 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:43:29 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:45:01 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:45:01 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:45:01 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:45:09 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:46:01 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:46:01 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:46:01 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:46:10 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:47:02 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:47:02 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:47:02 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:47:11 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:47:11 - ERROR  - [convert_parameter_metadata_to_dict(): 74] - Error while converting workflow metadata to dict: 'float' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+2024-09-22 14:47:11 - ERROR  - [automate_parameter(): 40] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 75, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:47:11 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 75, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 41, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:48:27 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:48:27 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:48:27 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:48:37 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:48:37 - ERROR  - [convert_parameter_metadata_to_dict(): 74] - Error while converting workflow metadata to dict: 'float' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+2024-09-22 14:48:37 - ERROR  - [automate_parameter(): 40] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 75, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:48:37 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.parameter_json.get(metadata_label.lower(), '')
+                                                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 75, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 41, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 14:49:39 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:49:39 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:49:39 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:49:48 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 14:50:02 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 14:50:02 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 14:50:02 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 14:50:12 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:34:37 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:34:37 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:34:37 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:34:44 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:34:44 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:34:44 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:34:59 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:35:33 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:35:33 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:35:33 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:35:43 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:35:54 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:35:54 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:35:54 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:36:09 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:36:19 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:36:19 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:36:19 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:37:04 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:37:04 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:37:04 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:37:11 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:37:11 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:37:11 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:37:36 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:37:36 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:37:36 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:38:38 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:38:38 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:38:38 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:38:58 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:38:58 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:38:58 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:39:08 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:39:08 - ERROR  - [convert_parameter_metadata_to_dict(): 75] - Error while converting workflow metadata to dict: 'float' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+2024-09-22 15:39:08 - ERROR  - [automate_parameter(): 40] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 76, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 15:39:08 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 76, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 41, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 15:40:46 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:40:46 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:40:46 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:40:57 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:40:58 - ERROR  - [convert_parameter_metadata_to_dict(): 75] - Error while converting workflow metadata to dict: 'float' object has no attribute 'lower'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+2024-09-22 15:40:58 - ERROR  - [automate_parameter(): 40] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 76, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 15:40:58 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 70, in convert_parameter_metadata_to_dict
+    metadata_label = ParameterConstants.meta_data_mapping.get(metadata_label.lower(), '')
+                                                              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 35, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 76, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 41, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 15:41:17 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:41:17 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:41:17 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:41:25 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:42:13 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:42:13 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:42:13 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:42:25 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:42:25 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:42:25 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:43:05 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:43:05 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:43:05 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:46:37 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:46:37 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:46:37 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:46:47 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:47:14 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:47:14 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:47:14 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:47:26 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:48:15 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:48:15 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:48:15 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:48:28 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:48:28 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:48:28 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:48:38 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:49:07 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:49:07 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:49:07 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:49:19 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:49:45 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:49:45 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:49:45 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:50:05 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 15:50:32 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 15:50:32 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 15:50:32 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 15:50:41 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 16:01:28 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:01:28 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:01:28 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:01:38 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:01:38 - ERROR  - [convert_parameter_metadata_to_dict(): 77] - Error while converting workflow metadata to dict: 'float' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 71, in convert_parameter_metadata_to_dict
+    value = metadata_value.strip() if metadata_value else metadata_value
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'strip'
+2024-09-22 16:01:38 - ERROR  - [automate_parameter(): 41] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 71, in convert_parameter_metadata_to_dict
+    value = metadata_value.strip() if metadata_value else metadata_value
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'strip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:01:38 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 71, in convert_parameter_metadata_to_dict
+    value = metadata_value.strip() if metadata_value else metadata_value
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'float' object has no attribute 'strip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 42, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:02:45 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:02:45 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:02:45 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:02:55 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:03:48 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:03:48 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:03:48 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:03:57 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:05:13 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:05:13 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:05:13 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:05:30 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:05:30 - ERROR  - [convert_parameter_metadata_to_dict(): 82] - Error while converting workflow metadata to dict: Object of type type is not JSON serializable
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+2024-09-22 16:05:30 - ERROR  - [automate_parameter(): 41] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 83, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:05:30 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 83, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 42, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:06:17 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:06:17 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:06:17 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:06:31 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:06:31 - ERROR  - [convert_parameter_metadata_to_dict(): 82] - Error while converting workflow metadata to dict: Object of type type is not JSON serializable
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+2024-09-22 16:06:31 - ERROR  - [automate_parameter(): 41] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 83, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:06:31 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 78, in convert_parameter_metadata_to_dict
+    print("data", json.dumps(self.parameter_metadata, indent=2))  # Pretty print JSON
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type type is not JSON serializable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 36, in automate_parameter
+    self.convert_parameter_metadata_to_dict(df)
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 83, in convert_parameter_metadata_to_dict
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 42, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:10:09 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:10:09 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:10:09 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:10:21 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:11:00 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:11:00 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:11:00 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:11:08 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:11:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:11:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:11:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:11:30 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:11:38 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:11:38 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:11:38 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:11:46 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:12:15 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:12:15 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:12:15 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:12:23 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:12:38 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:12:38 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:12:38 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:12:49 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:15:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:15:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:15:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:15:31 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:17:09 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:17:09 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:17:09 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:17:18 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:18:45 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:18:45 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:18:45 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:18:55 - INFO   - [automate_parameter(): 30] - Initiated parameter automation
+2024-09-22 16:47:21 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:47:21 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:47:21 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:47:58 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:47:58 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:47:58 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:48:18 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
+2024-09-22 16:48:19 - ERROR  - [update_parameter(): 88] - Error while updating the parameter data: 'dict' object is not callable
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 84, in update_parameter
+    payload_data = ParameterConstants.parameter_json()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+2024-09-22 16:48:19 - ERROR  - [automate_parameter(): 41] - Error while automating parameter: unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 84, in update_parameter
+    payload_data = ParameterConstants.parameter_json()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 37, in automate_parameter
+    self.update_parameter()
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 89, in update_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:48:19 - ERROR  - [update_parameter(): 42] - exception from generate form json logic unsupported operand type(s) for +=: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 84, in update_parameter
+    payload_data = ParameterConstants.parameter_json()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 37, in automate_parameter
+    self.update_parameter()
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 89, in update_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 38, in update_parameter
+    response_messages = app_handler.automate_parameter()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Automation_20092024\Automation\scripts\core\handlers\parameter_handler.py", line 42, in automate_parameter
+    self.response_messages += msg
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2024-09-22 16:48:38 - INFO   - [<module>(): 11] - ****Starting UT-Automation ***
+2024-09-22 16:48:38 - INFO   - [<module>(): 36] - App Starting at 127.0.0.1:2024 with 1 workers.
+2024-09-22 16:48:38 - INFO   - [<module>(): 37] - Access Swagger at http://127.0.0.1:2024/docs
+2024-09-22 16:48:47 - INFO   - [automate_parameter(): 29] - Initiated parameter automation
