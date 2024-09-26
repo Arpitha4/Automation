@@ -6,7 +6,7 @@ from scripts.logging.logger import logger
 if __name__ == "__main__":
     try:
         login_token = {'login-token': EnvironmentDetails.access_token}
-        UPLOAD_DIR = os.path.join(os.path.dirname(__file__), )
+        UPLOAD_DIR = os.path.join(os.path.dirname(__file__), TemplateDetails.FOLDER_NAME)
         file_path = os.path.join(UPLOAD_DIR, TemplateDetails.FILE_NAME)
         if not os.path.isfile(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
