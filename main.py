@@ -1,12 +1,14 @@
 import os
 
+from scripts.config.app_configurations import TemplateDetails
 from scripts.constants.app_constants import AutomationConstants
 from scripts.core.handlers.parameter_category import ParameterCategoryHandler
 from scripts.core.handlers.parameter_creation import ParameterCreationHandler
 from scripts.core.handlers.parameter_groups import ParameterGroups
 from scripts.logging.logger import logger
 
-UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'parameter_template')
+
+UPLOAD_DIR = os.path.join(os.path.dirname(__file__), TemplateDetails.FOLDER_NAME)
 
 
 def create_parameter(file_path: str, login_token: dict):

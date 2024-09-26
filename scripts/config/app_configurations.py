@@ -58,3 +58,8 @@ class EnvironmentDetails:
     app_id: str = config["ENVIRONMENT"]["app_id"]
     project_name: str = config["ENVIRONMENT"]["project_name"]
     access_token: str = config["ENVIRONMENT"]["access_token"]
+
+
+class TemplateDetails:
+    FOLDER_NAME: str = config["TEMPLATE"]["FOLDER_NAME"]
+    FILE_NAME: str = config["TEMPLATE"]["FILE_NAME"]
