@@ -1,45 +1,17 @@
-from scripts.config import Services
+import os
+from main import create_parameter
+from scripts.config.app_configurations import EnvironmentDetails
 from scripts.logging.logger import logger
-import uvicorn
-import argparse
-
-
-ap = argparse.ArgumentParser()
 
 if __name__ == "__main__":
     try:
-        logger.info(f"****Starting {Services.PROJECT_NAME} ***")
-        print(f"****************************Starting {Services.PROJECT_NAME}****************************")
-        ap.add_argument(
-            "--port",
-            "-p",
-            required=False,
-            default=Services.PORT,
-            help="Port to start the application.",
-        )
-        ap.add_argument(
-            "--bind",
-            "-b",
-            required=False,
-            default=Services.HOST,
-            help="IF to start the application.",
-        )
-        ap.add_argument(
-            "--workers",
-            "-w",
-            type=int,
-            default=Services.WORKERS,
-            help="Number of worker processes to use.",
-        )
-        arguments = vars(ap.parse_args())
-
-        logger.info(f"App Starting at {arguments['bind']}:{arguments['port']} with {arguments['workers']} workers.")
-        logger.info(f"Access Swagger at http://{arguments['bind']}:{arguments['port']}/docs")
-        uvicorn.run(
-            "main:app",
-            host=arguments["bind"],
-            port=int(arguments["port"]),
-            workers=arguments["workers"]
-        )
+        login_token = {'login-token': EnvironmentDetails.access_token}
+        UPLOAD_DIR = os.path.join(os.path.dirname(__file__), 'parameter_template')
+        file_path = os.path.join(UPLOAD_DIR, 'template1.xlsx')
+        if not os.path.isfile(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
+        create_parameter(file_path, login_token)
+    except FileNotFoundError as fnf_error:
+        logger.exception(f"FileNotFoundError: {fnf_error}")
     except Exception as e:
-        logger.error(f"Error from app - {e}")
+        logger.exception(f"Exception from generate form json logic: {e}")

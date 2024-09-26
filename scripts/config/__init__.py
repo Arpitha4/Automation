@@ -1,18 +1,10 @@
 from pydantic import Field
 from pydantic_settings import BaseSettings
 
-from scripts.config.app_configurations import Service, Path, LoggingDetails
+from scripts.config.app_configurations import Path, LoggingDetails
 
 
 class _Services(BaseSettings):
-    HOST: str = Field(default=Service.SERVICE_HOST, env="service_host")
-    PORT: int = Field(default=int(Service.SERVICE_PORT), env="service_port")
-    PROJECT_NAME: str = Field(default=Service.PROJECT_NAME, env="project_name")
-    ENABLE_CORS: bool = True
-    CORS_URLS: list = ["*.ilens.io"]
-    CORS_ALLOW_CREDENTIALS: bool = True
-    CORS_ALLOW_METHODS: list = ["GET", "POST"]
-    CORS_ALLOW_HEADERS: list = ["*"]
     LOG_LEVEL: str = LoggingDetails.LOG_LEVEL
     BACKUP_COUNT: int = LoggingDetails.BACKUP_COUNT
     MAX_BYTES: int = LoggingDetails.MAX_BYTES

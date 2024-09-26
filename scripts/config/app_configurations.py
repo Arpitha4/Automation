@@ -42,17 +42,11 @@ class LoggingDetails:
     LOG_LEVEL: str = config["LOGGING"]["LOG_LEVEL"]
     BACKUP_COUNT: int = int(config["LOGGING"]["BACKUP_COUNT"])
     MAX_BYTES: int = int(config["LOGGING"]["MAX_BYTES"])
+    FILE_NAME: str = config["LOGGING"]["FILE_NAME"]
 
 
 class Path:
     CONFIG_PATH: str = config["PATH"]["CONFIG_PATH"]
-
-
-class Service:
-    SERVICE_HOST: str = config["SERVICE"]["SERVICE_HOST"]
-    SERVICE_PORT: int = int(config["SERVICE"]["SERVICE_PORT"])
-    WORKERS: str = config["SERVICE"]["WORKERS"]
-    PROJECT_NAME: str = config["SERVICE"]["PROJECT_NAME"]
 
 
 class EnvironmentDetails:

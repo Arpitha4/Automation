@@ -1,12 +1,19 @@
 from scripts.config.app_configurations import EnvironmentDetails
-from scripts.constants import EnvironmentConstants
 
 
 class AppConstants:
+    step_category = 'step_category'
     project_type = 'project_type'
     tz = 'tz'
     langauge = 'language'
-    metadata_sheet = 'parameter'
+    metadata_sheet = 'Metadata'
+    permissions = 'Permissions'
+    actions = 'Actions'
+    approval = 'Approval'
+    parameter_category = 'parameter category'
+    parameter_groups = 'parameter group'
+    parameter = 'parameter'
+
 
 class AutomationConstants:
     tz = 'Asia/Kolkata'
@@ -18,26 +25,6 @@ class AutomationConstants:
         'false': False
     }
     encrypt_payload = bool_map.get(EnvironmentDetails.encrypt_payload.lower(), False)
-
-
-class Parameter:
-    fetch_step_data_payload = {
-        "startRow": 0,
-        "endRow": 100,
-        "page": 1,
-        "records": 100,
-        "filters": {
-            "sortModel": [],
-            "filterModel": {}
-        },
-        "global_filters": {},
-        "metaData": {},
-        "tag_fetch_type": "",
-        "project_id": EnvironmentConstants.project_id,
-        "project_type": AutomationConstants.project_type,
-        "tz": EnvironmentConstants.tz,
-        "language": AutomationConstants.language
-    }
 
 
 class Secrets:
