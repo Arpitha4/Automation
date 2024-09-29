@@ -95,7 +95,7 @@ class ParameterCreationHandler:
                                       not parameter_values.get(field) or parameter_values.get(field) not in labels]
 
                     if missing_fields:
-                        msg = f"Skipping parameter creation for {parameter['tag_name']} due to missing values: {missing_fields}\n"
+                        msg = f"Parameter creation for '{parameter['tag_name']}' could not be completed due to missing values: {missing_fields}.\n"
                         logger.info(msg)
                         self.response_messages += msg
                         continue
