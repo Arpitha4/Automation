@@ -41,3 +41,51 @@ Traceback (most recent call last):
     get_data_type = self.get_data_type()
                     ^^^^^^^^^^^^^^^^^^
 AttributeError: 'ParameterCreationHandler' object has no attribute 'get_data_type'
+2024-09-29 11:31:11 - ERROR  - [process_parameters(): 31] - Exception from processing parameters: [Errno 2] No such file or directory: 'D:\\Automation_20092024\\Automation\\scripts\\services\\parameter_template\\template1.xlsx'
+Traceback (most recent call last):
+  File "D:\Automation_20092024\Automation\scripts\services\parameter_services.py", line 21, in process_parameters
+    with open(upload_file_path, "wb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Automation_20092024\\Automation\\scripts\\services\\parameter_template\\template1.xlsx'
+2024-09-29 11:34:09 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-29 11:34:13 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists
+2024-09-29 11:34:13 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-29 11:34:17 - INFO   - [automate_parameter_groups(): 67] - Parameter Groups Information Exists
+
+2024-09-29 11:34:17 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-29 11:34:27 - INFO   - [automate_parameter_creation(): 118] - Parameter ['param1', 'param2', 'param3'] Information Exists
+
+2024-09-29 11:35:43 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-29 11:35:46 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists
+2024-09-29 11:35:46 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-29 11:35:49 - INFO   - [automate_parameter_groups(): 67] - Parameter Groups Information Exists
+
+2024-09-29 11:35:49 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-29 11:36:00 - INFO   - [automate_parameter_creation(): 118] - Parameter ['param1', 'param2', 'param3'] Information Exists
+
+2024-09-29 11:40:42 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-29 11:40:45 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists
+2024-09-29 11:40:46 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-29 11:40:50 - INFO   - [automate_parameter_groups(): 67] - Parameter Groups Information Exists
+
+2024-09-29 11:40:50 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-29 11:41:00 - INFO   - [automate_parameter_creation(): 118] - Parameter ['param1', 'param2', 'param3'] Information Exists
+
+2024-09-29 11:41:13 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-29 11:41:17 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists
+2024-09-29 11:41:17 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-29 11:41:20 - INFO   - [automate_parameter_groups(): 67] - Parameter Groups Information Exists
+
+2024-09-29 11:41:20 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-29 11:41:32 - INFO   - [automate_parameter_creation(): 118] - Parameter ['param1', 'param2', 'param3'] Information Exists
+
+2024-09-29 11:41:32 - INFO   - [process(): 26] - Processing completed successfully. Responses: {'parameter_category': 'Parameter Category Information Exists', 'parameter_groups': 'Parameter Groups Information Exists\n', 'parameter_creation': "Parameter ['param1', 'param2', 'param3'] Information Exists\n"}
+2024-09-29 11:44:09 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-29 11:44:13 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists
+2024-09-29 11:44:13 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-29 11:44:17 - INFO   - [automate_parameter_groups(): 67] - Parameter Groups Information Exists
+
+2024-09-29 11:44:17 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-29 11:44:27 - INFO   - [automate_parameter_creation(): 118] - Parameter ['param1', 'param2', 'param3'] Information Exists
+
+2024-09-29 11:44:27 - INFO   - [process(): 24] - Processing completed successfully. Responses: {'parameter_category': 'Parameter Category Information Exists', 'parameter_groups': 'Parameter Groups Information Exists\n', 'parameter_creation': "Parameter ['param1', 'param2', 'param3'] Information Exists\n"}

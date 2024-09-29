@@ -1,41 +1,45 @@
 import os
-
-from scripts.config.app_configurations import TemplateDetails
-from scripts.constants.app_constants import AutomationConstants
-from scripts.core.handlers.parameter_category import ParameterCategoryHandler
-from scripts.core.handlers.parameter_creation import ParameterCreationHandler
-from scripts.core.handlers.parameter_groups import ParameterGroups
+import logging
+from scripts.config.app_configurations import EnvironmentDetails, TemplateDetails
 from scripts.logging.logger import logger
+from scripts.services.parameter_services import ParameterService
+
+logging.basicConfig(level=logging.INFO)
 
 
-UPLOAD_DIR = os.path.join(os.path.dirname(__file__), TemplateDetails.FOLDER_NAME)
+class ParameterProcessor:
+    """Class to handle parameter processing logic."""
+
+    def __init__(self, login_token: dict):
+        self.login_token = login_token
+        self.upload_dir = os.path.join(os.path.dirname(__file__), TemplateDetails.FOLDER_NAME)
+        self.file_path = os.path.join(self.upload_dir, TemplateDetails.FILE_NAME)
+
+    def process(self):
+        """Main method to execute parameter processing."""
+        try:
+            self.validate_file_path(self.file_path)
+            parameter_service = ParameterService(self.login_token)
+            responses = parameter_service.process_parameters(self.file_path)
+            logger.info("Processing completed successfully. Responses: %s", responses)
+
+        except FileNotFoundError as fnf_error:
+            logger.exception("FileNotFoundError: %s", fnf_error)
+        except Exception as e:
+            logger.exception("An error occurred while processing parameters: %s", e)
+
+    @staticmethod
+    def validate_file_path(file_path: str):
+        """Validate the existence of the file at the specified path."""
+        if not os.path.isfile(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
 
 
-def create_parameter(file_path: str, login_token: dict):
+def main():
+    """Entry point for the processing logic."""
     try:
-        with open(file_path, "rb") as f:
-            file_content = f.read()
-
-        upload_file_path = os.path.join(UPLOAD_DIR, os.path.basename(file_path))
-        with open(upload_file_path, "wb") as f:
-            f.write(file_content)
-
-        encrypt_payload = AutomationConstants.encrypt_payload
-        parameter_category = ParameterCategoryHandler(login_token=login_token, encrypt_payload=encrypt_payload,
-                                                      file_path=upload_file_path)
-        response = parameter_category.automate_parameter_category()
-        print(f"Response from automate_parameter_category: {response}")
-
-        parameter_groups = ParameterGroups(login_token=login_token, encrypt_payload=encrypt_payload,
-                                           file_path=upload_file_path)
-        response = parameter_groups.automate_parameter_groups()
-        print(f"Response from automate_parameter_groups: {response}")
-
-        parameter_creation = ParameterCreationHandler(login_token=login_token, encrypt_payload=encrypt_payload,
-                                                      file_path=upload_file_path)
-        response = parameter_creation.automate_parameter_creation()
-        print(f"Response from automate_parameter_creation: {response}")
-
+        login_token = {'login-token': EnvironmentDetails.access_token}
+        processor = ParameterProcessor(login_token)
+        processor.process()
     except Exception as e:
-        logger.exception(f"Exception from generate form json logic {e}")
-        return {'logs': [str(e)]}
+        logger.exception("An error occurred while initializing or processing the ParameterProcessor: %s", e)
