@@ -29,27 +29,27 @@ class ParameterConstants:
 
     parameter_json = {
         "tag_name": "",
-        "unit": None,
-        "tag_type": None,
+        "unit": "",
+        "tag_type": "",
         "description": "",
         "tag_id": "",
         "tag_group_id": "",
-        "data_type": None,
+        "data_type": "",
         "value_list": [],
-        "system_tag_type": "raw_tag",
-        "tag_category_id": None,
+        "system_tag_type": "",
+        "tag_category_id": "",
         "data_quality_info": {
             "basic": {
-                "value": None,
-                "required": False
+                "value": "",
+                "required": ""
             },
             "numeric_limit": {
-                "min": None,
-                "max": None
+                "min": "",
+                "max": ""
             },
             "string_length": {
-                "min": None,
-                "max": None
+                "min": "",
+                "max": ""
             }
         },
         "tag_label": None,
@@ -73,8 +73,8 @@ class ParameterConstants:
         "parameter name": "tag_name",
         "description": "description",
         "data source": "system_tag_label",
-        "data type": "tag_type_name",
-        "ui input type": "tag_type",
+        "data type": "data_type_name",
+        "ui input type": "tag_type_name",
         "parameter label": "tag_label",
         "unit": "unit_name",
         "parameter group": "tag_group_name",
@@ -137,6 +137,13 @@ class ParameterConstants:
 
     list_parameter_category = {
         "lookup_name": "tag_categories",
+        "project_id": EnvironmentConstants.project_id,
+        "project_type": AutomationConstants.project_type,
+        "tz": EnvironmentConstants.tz,
+        "language": AutomationConstants.language
+    }
+
+    parameter_payload = {
         "project_id": EnvironmentConstants.project_id,
         "project_type": AutomationConstants.project_type,
         "tz": EnvironmentConstants.tz,

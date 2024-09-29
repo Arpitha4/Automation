@@ -22,13 +22,13 @@ class ParameterCategoryHandler:
         self.file_path = file_path
         self.workbook = openpyxl.load_workbook(self.file_path, data_only=True)
         self.common_utils_obj = CommonUtils(workbook=self.workbook)
-        self.response_messages = response_messages
+        self.response_messages = response_messages or ""
         self.parameter_metadata = dict()
         self.parameter_list = []
 
     def automate_parameter_category(self):
         try:
-            logger.info("Initiated parameter automation")
+            logger.info("Initiated parameter category automation")
             df, _, _ = self.common_utils_obj.convert_sheet_to_df(sheet_name=AppConstants.parameter_category)
 
             merged_row_groups = self.common_utils_obj.group_merged_rows(df=df, merge_column=0)
@@ -36,7 +36,7 @@ class ParameterCategoryHandler:
             df = self.extract_parameter_data(merged_row_groups, df)
             self.convert_parameter_metadata_to_dict(df)
 
-            _, parameter_category_data = self.check_parameter_categories()
+            _, parameter_category_data = self.check_parameter_categories_exits()
 
             existing_tag_categories = [category["tag_category_name"].lower() for category in parameter_category_data]
             new_tag_categories = [category["tag_category_name"].lower() for category in self.parameter_list]
@@ -78,10 +78,18 @@ class ParameterCategoryHandler:
         try:
             group_dfs = []
             for each in merged_row_groups:
-                group_df = df.iloc[each].reset_index(drop=True)
-                group_df.dropna(how='all', inplace=True)
-                group_df.dropna(how='all', axis=1, inplace=True)
-                group_dfs.append(group_df)
+                try:
+                    group_df = df.iloc[each].reset_index(drop=True)
+                    group_df.dropna(how='all', inplace=True)
+                    group_df.dropna(how='all', axis=1, inplace=True)
+                    group_dfs.append(group_df)
+                except Exception as group_error:
+                    logger.error(f"Error processing merged row group {each}: {group_error}")
+
+            if not group_dfs:
+                logger.warning("No valid groups found after processing merged rows.")
+                raise ValueError("No valid groups found.")
+
             result_df = pd.concat(group_dfs, ignore_index=True)
             return result_df
         except Exception as extraction_error:
@@ -96,8 +104,6 @@ class ParameterCategoryHandler:
                 raise ValueError("The input DataFrame is empty.")
             arr = df.to_numpy()
             keys = arr[0]
-            if self.response_messages is None:
-                self.response_messages = ""
             self.parameter_list = []
             for row in range(1, len(arr)):
                 metadata_value = arr[row]
@@ -107,6 +113,7 @@ class ParameterCategoryHandler:
                     if metadata_label.lower() == 'tag_category_name':
                         if pd.isna(metadata_value[col]):
                             self.response_messages += 'Parameter Category is missing\n'
+                            logger.error("Parameter Category is missing in row %d", row)
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -132,26 +139,30 @@ class ParameterCategoryHandler:
 
                 url = f'{EnvironmentConstants.base_path}{ParametersAPI.save_parameter_category}'
 
-                # encode payload into JWT
-                if self.encrypt_payload:
-                    payload = JWT().encode(payload=payload_data)
-                    response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
+                try:
+                    # encode payload into JWT
+                    if self.encrypt_payload:
+                        payload = JWT().encode(payload=payload_data)
+                        response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
+                    else:
+                        response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
 
-                if response.status_code != 200:
-                    msg = "Failed to fetch parameter data\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=self.response_messages)
+                    if response.status_code != 200:
+                        msg = "Failed to fetch parameter category data\n"
+                        logger.error(msg)
+                        self.response_messages += msg
+                        raise HTTPException(status_code=response.status_code, detail=self.response_messages)
+                except requests.RequestException as request_error:
+                    logger.error(f"Request error during category creation: {request_error}")
+                    raise HTTPException
 
         except Exception as metadata_error:
-            msg = f"Error while updating the parameter data: {metadata_error}\n"
+            msg = f"Error while creating the parameter category: {metadata_error}\n"
             logger.exception(msg)
             self.response_messages += msg
             raise ValueError(self.response_messages)
 
-    def check_parameter_categories(self):
+    def check_parameter_categories_exits(self):
         try:
             payload = copy.deepcopy(ParameterConstants.parameter_content_json)
             filter_data_template = copy.deepcopy(ParameterConstants.parameter_category_filter_model)
@@ -163,23 +174,27 @@ class ParameterCategoryHandler:
                 payload['filters']['filterModel'] = filter_data
 
                 url = f'{EnvironmentConstants.base_path}{ParametersAPI.content_parameter_category}'
-                if self.encrypt_payload:
-                    payload_encoded = JWT().encode(payload=payload)
-                    response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
-                                             cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
+                try:
+                    if self.encrypt_payload:
+                        payload_encoded = JWT().encode(payload=payload)
+                        response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
+                                                 cookies=self.login_token)
+                    else:
+                        response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
 
-                if response.status_code != 200:
-                    msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=self.response_messages)
+                    if response.status_code != 200:
+                        msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
+                        logger.error(msg)
+                        self.response_messages += msg
+                        raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
-                response_json = response.json()
-                parameter_category_data = response_json.get('data', {}).get('bodyContent', [])
-                if parameter_category_data:
-                    results.append(parameter_category_data[0])
+                    response_json = response.json()
+                    parameter_category_data = response_json.get('data', {}).get('bodyContent', [])
+                    if parameter_category_data:
+                        results.append(parameter_category_data[0])
+                except requests.RequestException as request_error:
+                    logger.error(f"Request error while checking category existence: {request_error}")
+                    raise HTTPException
 
             return True, results
         except Exception as app_data_error:

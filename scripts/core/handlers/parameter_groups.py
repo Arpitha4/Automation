@@ -3,7 +3,7 @@ import pandas as pd
 import openpyxl
 import requests
 
-from fastapi import HTTPException, status
+from fastapi import HTTPException
 
 from scripts.constants import EnvironmentConstants
 from scripts.constants.api_constants import ParametersAPI
@@ -22,13 +22,13 @@ class ParameterGroups:
         self.file_path = file_path
         self.workbook = openpyxl.load_workbook(self.file_path, data_only=True)
         self.common_utils_obj = CommonUtils(workbook=self.workbook)
-        self.response_messages = response_messages
+        self.response_messages = response_messages or ""
         self.parameter_metadata = dict()
         self.parameter_list = []
 
     def automate_parameter_groups(self):
         try:
-            logger.info("Initiated parameter automation")
+            logger.info("Initiated parameter groups automation")
 
             df, _, _ = self.common_utils_obj.convert_sheet_to_df(sheet_name=AppConstants.parameter_groups)
             merged_row_groups = self.common_utils_obj.group_merged_rows(df=df, merge_column=0)
@@ -68,7 +68,7 @@ class ParameterGroups:
                 self.response_messages += msg
             return self.response_messages
         except Exception as parameter_error:
-            msg = f"Error while automating parameter: {parameter_error}\n"
+            msg = f"Error while automating parameter groups: {parameter_error}\n"
             logger.exception(msg)
             self.response_messages += msg
             return {}, self.response_messages, False
@@ -95,8 +95,6 @@ class ParameterGroups:
                 raise ValueError("The input DataFrame is empty.")
             arr = df.to_numpy()
             keys = arr[0]
-            if self.response_messages is None:
-                self.response_messages = ""
             self.parameter_list = []
             for row in range(1, len(arr)):
                 metadata_value = arr[row]
@@ -106,6 +104,7 @@ class ParameterGroups:
                     if metadata_label.lower() == 'tag_group_name':
                         if pd.isna(metadata_value[col]):
                             self.response_messages += 'Parameter Groups is missing\n'
+                            logger.error('Parameter Groups is missing in row: %s', row)
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -142,7 +141,7 @@ class ParameterGroups:
                 msg = "Failed to fetch parameter data\n"
                 logger.error(msg)
                 self.response_messages += msg
-                raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=self.response_messages)
+                raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
         except Exception as metadata_error:
             msg = f"Error while updating the parameter data: {metadata_error}\n"
@@ -173,7 +172,7 @@ class ParameterGroups:
                     msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
                     logger.error(msg)
                     self.response_messages += msg
-                    raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=self.response_messages)
+                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
                 response_json = response.json()
                 parameter_groups_data = response_json.get('data', {}).get('bodyContent', [])
@@ -192,7 +191,7 @@ class ParameterGroups:
 
             url = f'{EnvironmentConstants.base_path}{ParametersAPI.list_parameter_category}'
             if self.encrypt_payload:
-                payload_encoded = JWT().encode(payload=payload)
+                payload_encoded = JWT().encode(payload)
                 response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
                                          cookies=self.login_token)
             else:
@@ -202,7 +201,7 @@ class ParameterGroups:
                 msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
                 logger.error(msg)
                 self.response_messages += msg
-                raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=self.response_messages)
+                raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
             response_json = response.json()
             parameter_category_data = response_json["data"]
