@@ -13,6 +13,8 @@ class AppConstants:
     parameter_category = 'parameter category'
     parameter_groups = 'parameter group'
     parameter = 'parameter'
+    unit_sheet = 'unit'
+    unit_groups_sheet = 'unit group'
 
 
 class AutomationConstants:

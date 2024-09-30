@@ -9,6 +9,7 @@ class BaseURLPaths:
     ilens_module = '/ilens_api/ilens_config'
     hierarchy_module = '/hry/hierarchy'
     parameters = '/hry/parameters'
+    units = '/hry/units'
 
 
 class ParametersAPI:
@@ -23,3 +24,11 @@ class ParametersAPI:
     get_data_types = f'{BaseURLPaths.ilens_module}/get_data_types'
     get_unit_data = f'{BaseURLPaths.ilens_module}/get_units'
     get_tag_groups = f'{BaseURLPaths.ilens_module}/get_tag_group'
+
+
+class UnitAPI:
+    list_unit_groups_data = f'{BaseURLPaths.units}/list_unit_groups'
+    save_unit_groups = f'{BaseURLPaths.ilens_module}/save_unit_group'
+    list_units_data = f'{BaseURLPaths.units}/list_units'
+    get_units_data = f'{BaseURLPaths.units}/get_unit_groups'
+    save_units = f'{BaseURLPaths.units}/save_units'
