@@ -53,12 +53,12 @@ class UnitsHandler:
                     for each_parameter_id in unit_groups_data:
                         if each_parameter_id["label"].lower() in new_units:
                             self.create_unit(each_parameter_id=each_parameter_id)
-                            logger.info("Updated Units Information")
-                            msg = "Updated units Information\n"
+                            msg = f"Created Units: {each_parameter_id['label']}\n"
+                            logger.info(msg)
                             logger.info(msg)
                             self.response_messages += msg
             else:
-                msg = "Units Information Exists\n"
+                msg = f"Units Information Exists: {existing_unit}\n"
                 logger.info(msg)
                 self.response_messages += msg
             return self.response_messages

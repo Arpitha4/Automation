@@ -55,7 +55,7 @@ class ParameterCategoryHandler:
             if added_categories or removed_categories:
                 logger.info("Initiated update for Parameter Category Information!!")
                 self.create_parameter_category()
-                msg = "Updated Parameter Category Information"
+                msg = f"Created Parameter Category Information : {new_tag_categories} "
                 logger.info(msg)
                 self.response_messages += msg
 
@@ -64,7 +64,7 @@ class ParameterCategoryHandler:
                 if removed_categories:
                     logger.info(f"Removed categories: {', '.join(removed_categories)}")
             else:
-                msg = "Parameter Category Information Exists"
+                msg = f"Parameter Category Information Exists: {existing_tag_categories} "
                 logger.info(msg)
                 self.response_messages += msg
             return self.response_messages

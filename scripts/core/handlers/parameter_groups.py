@@ -59,11 +59,11 @@ class ParameterGroups:
                         if each_parameter_id["label"].lower() in new_categories:
                             list_data.append(each_parameter_id)
                     self.create_parameter_groups(list_data=list_data)
-                    msg = "Updated Parameter Groups Information\n"
+                    msg = f"Created Parameter Groups Information: {new_tag_groups} \n"
                     logger.info(msg)
                     self.response_messages += msg
             else:
-                msg = "Parameter Groups Information Exists\n"
+                msg = f"Parameter Groups Information Exists: {existing_tag_groups} \n"
                 logger.info(msg)
                 self.response_messages += msg
             return self.response_messages

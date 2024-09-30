@@ -52,11 +52,11 @@ class UnitGroupsHandler:
             if added_groups or removed_groups:
                 logger.info("Initiated update for units groups Information!!")
                 self.create_unit()
-                msg = "Updated unit groups Information\n"
+                msg = f"Created unit groups Information: {new_unit_groups}\n"
                 logger.info(msg)
                 self.response_messages += msg
             else:
-                msg = "Unit groups Information Exists\n"
+                msg = f"Unit groups Information Exists: {existing_unit_groups}\n"
                 logger.info(msg)
                 self.response_messages += msg
             return self.response_messages

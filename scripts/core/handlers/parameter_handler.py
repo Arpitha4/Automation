@@ -111,10 +111,10 @@ class ParameterCreationHandler:
                     }
 
                     self.create_parameter(**create_param_data)
-                    msg = "Completed Parameter Creation\n"
+                    msg = f"Completed Parameter Creation: {new_tag_name}\n"
                     self.response_messages += msg
             else:
-                msg = f"Parameter {existing_tag_name} Information Exists\n"
+                msg = f"Parameter Information Exists:{existing_tag_name}\n"
                 logger.info(msg)
                 self.response_messages += msg
 
