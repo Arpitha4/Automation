@@ -1,0 +1,18 @@
+2024-09-30 11:40:41 - INFO   - [automate_unit_groups(): 28] - Initiated Unit Group automation
+2024-09-30 11:40:43 - INFO   - [automate_unit_groups(): 60] - Unit groups Information Exists: ['test_30092024', 'test_30092024-1']
+
+2024-09-30 11:40:43 - INFO   - [automate_units(): 28] - Initiated Units automation
+2024-09-30 11:40:45 - INFO   - [automate_units(): 62] - Units Information Exists: {'test_30092024', 'test_30092024-1'}
+
+2024-09-30 11:40:45 - INFO   - [automate_parameter_category(): 31] - Initiated parameter category automation
+2024-09-30 11:40:46 - INFO   - [automate_parameter_category(): 68] - Parameter Category Information Exists: ['test_30092024', 'test_30092024-1'] 
+2024-09-30 11:40:46 - INFO   - [automate_parameter_groups(): 31] - Initiated parameter groups automation
+2024-09-30 11:40:48 - INFO   - [automate_parameter_groups(): 54] - Initiated update for Parameter Groups Information!!
+2024-09-30 11:40:49 - INFO   - [automate_parameter_groups(): 73] - Created Parameter Groups Information: {'test_30092024', 'test_30092024-1'} 
+
+2024-09-30 11:40:49 - INFO   - [automate_parameter_groups(): 79] - Missing Categories: test234567890 
+
+2024-09-30 11:40:49 - INFO   - [automate_parameter_creation(): 33] - Initiated parameter creation automation
+2024-09-30 11:40:54 - INFO   - [automate_parameter_creation(): 118] - Parameter Information Exists:['test_30092024', 'test_30092024-1', 'test_30092024-2']
+
+2024-09-30 11:40:54 - INFO   - [process(): 24] - Processing completed successfully. Responses: {'unit_groups': "Unit groups Information Exists: ['test_30092024', 'test_30092024-1']\n", 'units': "Units Information Exists: {'test_30092024', 'test_30092024-1'}\n", 'parameter_category': "Parameter Category Information Exists: ['test_30092024', 'test_30092024-1'] ", 'parameter_groups': "Created Parameter Groups Information: {'test_30092024', 'test_30092024-1'} \nMissing Categories: test234567890 \n", 'parameter_creation': "Parameter Information Exists:['test_30092024', 'test_30092024-1', 'test_30092024-2']\n"}

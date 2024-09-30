@@ -55,17 +55,28 @@ class ParameterGroups:
 
                 if added_categories or removed_categories:
                     list_data = []
-                    for each_parameter_id in parameter_categories_data:
-                        if each_parameter_id["label"].lower() in new_categories:
-                            list_data.append(each_parameter_id)
-                    self.create_parameter_groups(list_data=list_data)
-                    msg = f"Created Parameter Groups Information: {new_tag_groups} \n"
+                    missing_categories = []
+                    existing_labels = {each_parameter_id["label"].lower() for each_parameter_id in parameter_categories_data}
+
+                    for category in new_categories:
+                        if category.lower() in existing_labels:
+                            list_data.append(next(each for each in parameter_categories_data if each["label"].lower() == category.lower()))
+                        else:
+                            missing_categories.append(category)
+                    if list_data:
+                        self.create_parameter_groups(list_data=list_data)
+                        msg = f"Created Parameter Groups Information: {new_tag_groups} \n"
+                        logger.info(msg)
+                        self.response_messages += msg
+                    if missing_categories:
+                        missing_msg = f"Missing Categories: {', '.join(missing_categories)} \n"
+                        logger.info(missing_msg)
+                        self.response_messages += missing_msg
+                else:
+                    msg = f"Parameter Groups Information Exists: {existing_tag_groups} \n"
                     logger.info(msg)
                     self.response_messages += msg
-            else:
-                msg = f"Parameter Groups Information Exists: {existing_tag_groups} \n"
-                logger.info(msg)
-                self.response_messages += msg
+
             return self.response_messages
         except Exception as parameter_error:
             msg = f"Error while automating parameter groups: {parameter_error}\n"
