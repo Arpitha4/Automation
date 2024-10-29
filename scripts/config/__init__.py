@@ -1,7 +1,7 @@
 from pydantic import Field
 from pydantic_settings import BaseSettings
 
-from scripts.config.app_configurations import Path, LoggingDetails
+from scripts.config.app_configurations import LoggingDetails
 
 
 class _Services(BaseSettings):
@@ -19,7 +19,6 @@ class _BasePathConf(BaseSettings):
 
 class _PathConf(BaseSettings):
     LOG_PATH: str = LoggingDetails.LOG_PATH
-    CONFIG_PATH: str = Path.CONFIG_PATH
 
 
 Services = _Services()

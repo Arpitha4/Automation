@@ -45,10 +45,6 @@ class LoggingDetails:
     FILE_NAME: str = config["LOGGING"]["FILE_NAME"]
 
 
-class Path:
-    CONFIG_PATH: str = config["PATH"]["CONFIG_PATH"]
-
-
 class EnvironmentDetails:
     AUTH_ENDPOINT: str = config["ENVIRONMENT"]["AUTH_ENDPOINT"]
     BASE_PATH: str = config["ENVIRONMENT"]["BASE_PATH"]
@@ -56,7 +52,6 @@ class EnvironmentDetails:
     tz: str = config["ENVIRONMENT"]["tz"]
     encrypt_payload: str = config["ENVIRONMENT"]["encrypt_payload"]
     app_id: str = config["ENVIRONMENT"]["app_id"]
-    project_name: str = config["ENVIRONMENT"]["project_name"]
     access_token: str = config["ENVIRONMENT"]["access_token"]
 
 

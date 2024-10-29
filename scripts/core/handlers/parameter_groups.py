@@ -39,43 +39,51 @@ class ParameterGroups:
             _, parameter_groups_data = self.check_parameter_groups()
             parameter_categories_data = self.list_parameter_category()
 
-            existing_tag_groups = {group["tag_group_name"].lower() for group in parameter_groups_data}
+            existing_tag_groups = {group["label"].lower() for group in parameter_groups_data}
             new_tag_groups = {group["tag_group_name"].lower() for group in self.parameter_list}
             existing_categories = {category["label"].lower() for category in parameter_categories_data}
             new_categories = {category["category"].lower() for category in self.parameter_list if
                               category.get("category")}
 
             added_groups = new_tag_groups - existing_tag_groups
-            removed_groups = existing_tag_groups - new_tag_groups
+            # removed_groups = existing_tag_groups - new_tag_groups
             added_categories = new_categories - existing_categories
             removed_categories = existing_categories - new_categories
 
-            if added_groups or removed_groups:
+            if added_groups:
                 logger.info("Initiated update for Parameter Groups Information!!")
 
                 if added_categories or removed_categories:
                     list_data = []
                     missing_categories = []
-                    existing_labels = {each_parameter_id["label"].lower() for each_parameter_id in parameter_categories_data}
+                    existing_labels = {each_parameter_id["label"].lower() for each_parameter_id in
+                                       parameter_categories_data}
 
                     for category in new_categories:
                         if category.lower() in existing_labels:
-                            list_data.append(next(each for each in parameter_categories_data if each["label"].lower() == category.lower()))
+                            list_data.append(next(each for each in parameter_categories_data if
+                                                  each["label"].lower() == category.lower()))
                         else:
                             missing_categories.append(category)
                     if list_data:
-                        self.create_parameter_groups(list_data=list_data)
-                        msg = f"Created Parameter Groups Information: {new_tag_groups} \n"
-                        logger.info(msg)
-                        self.response_messages += msg
+                        created_parameter_groups = set()
+                        for each_input_parameter in self.parameter_list:
+                            self.create_parameter_groups(list_data=list_data, each_input_parameter=each_input_parameter)
+                            created_parameter_groups.update(new_tag_groups)
+
+                        if created_parameter_groups:
+                            msg = f"Created Parameter Groups Information: {new_tag_groups}\n"
+                            logger.info(msg)
+                            self.response_messages += msg + "\n"
+
                     if missing_categories:
-                        missing_msg = f"Missing Categories: {', '.join(missing_categories)} \n"
+                        missing_msg = f"Parameter Groups creation could not be completed due to missing Categories: {', '.join(missing_categories)} \n"
                         logger.info(missing_msg)
                         self.response_messages += missing_msg
-                else:
-                    msg = f"Parameter Groups Information Exists: {existing_tag_groups} \n"
-                    logger.info(msg)
-                    self.response_messages += msg
+            else:
+                msg = f"Parameter Groups Information Exists: {existing_tag_groups} \n"
+                logger.info(msg)
+                self.response_messages += msg
 
             return self.response_messages
         except Exception as parameter_error:
@@ -113,9 +121,9 @@ class ParameterGroups:
                 for col in range(len(keys)):
                     metadata_label = ParameterConstants.parameter_groups_meta_data.get(keys[col].lower(), '')
                     if metadata_label.lower() == 'tag_group_name':
-                        if pd.isna(metadata_value[col]):
-                            self.response_messages += 'Parameter Groups is missing\n'
-                            logger.error('Parameter Groups is missing in row: %s', row)
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f'Parameter Group Name is missing in row number {row + 1}.\n'
+                            self.response_messages += error_message
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -131,14 +139,13 @@ class ParameterGroups:
             self.response_messages += msg
             raise ValueError(self.response_messages)
 
-    def create_parameter_groups(self, list_data):
+    def create_parameter_groups(self, list_data, each_input_parameter):
         try:
             payload_data = copy.deepcopy(ParameterConstants.parameter_groups_json)
-            for each_data in self.parameter_list:
-                payload_data.update({
-                    "tag_group_name": each_data.get('tag_group_name', ''),
-                    "description": each_data.get('description', '')
-                })
+            payload_data.update({
+                "tag_group_name": each_input_parameter.get('tag_group_name', ''),
+                "description": each_input_parameter.get('description', '')
+            })
             payload_data["category"] = list_data[0].get('value') if list_data else None
             url = f'{EnvironmentConstants.base_path}{ParametersAPI.save_parameter_groups}'
             if self.encrypt_payload:
@@ -162,35 +169,27 @@ class ParameterGroups:
 
     def check_parameter_groups(self):
         try:
-            payload = copy.deepcopy(ParameterConstants.parameter_content_json)
-            filter_data_template = copy.deepcopy(ParameterConstants.parameter_groups_filter_model)
-            results = []
+            payload = copy.deepcopy(ParameterConstants.parameter_payload)
 
-            for each_data in self.parameter_list:
-                filter_data = filter_data_template.copy()
-                filter_data['tag_group_name']['filter'] = each_data.get('tag_group_name', '').strip()
-                payload['filters']['filterModel'] = filter_data
+            url = f'{EnvironmentConstants.base_path}{ParametersAPI.get_tag_groups}'
+            if self.encrypt_payload:
+                payload_encoded = JWT().encode(payload=payload)
+                response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
+                                         cookies=self.login_token)
+            else:
+                response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
 
-                url = f'{EnvironmentConstants.base_path}{ParametersAPI.get_parameter_group_content}'
-                if self.encrypt_payload:
-                    payload_encoded = JWT().encode(payload=payload)
-                    response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
-                                             cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
+            if response.status_code != 200:
+                msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
+                logger.error(msg)
+                self.response_messages += msg
+                raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
-                if response.status_code != 200:
-                    msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
-
-                response_json = response.json()
-                parameter_groups_data = response_json.get('data', {}).get('bodyContent', [])
-                if parameter_groups_data:
-                    results.append(parameter_groups_data[0])
-
-            return True, results
+            response_json = response.json()
+            parameter_groups_data = response_json.get('data', {})
+            if parameter_groups_data:
+                return True, parameter_groups_data
+            return False, {}
         except Exception as app_data_error:
             msg = f"Error while fetching parameter data: {app_data_error}\n"
             logger.exception(msg)

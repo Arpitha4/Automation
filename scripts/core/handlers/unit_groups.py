@@ -9,6 +9,7 @@ from scripts.constants.app_constants import Secrets, AppConstants
 from scripts.constants.unit_constants import UnitConstants
 from scripts.logging.logger import logger
 from scripts.utils.common_utils import CommonUtils
+from scripts.utils.pagination_utils import PaginationUtils
 from scripts.utils.security_utils.jwt_util import JWT
 
 
@@ -33,9 +34,13 @@ class UnitGroupsHandler:
             df = self.extract_unit_data(merged_row_groups, df)
             self.convert_unit_metadata_to_dict(df)
 
-            _, unit_category_data = self.list_unit_group_exits()
+            _, unit_groups_data = self.list_unit_group_exits()
 
-            existing_unit_groups = [category["unit_group_name"].lower() for category in unit_category_data]
+            existing_unit_groups = [
+                groups_data["unit_group_name"].lower()
+                for groups_data in unit_groups_data
+                if isinstance(groups_data, dict) and "unit_group_name" in groups_data
+            ]
             new_unit_groups = [category["unit_group_name"].lower() for category in self.unit_list]
 
             added_groups = []
@@ -49,12 +54,17 @@ class UnitGroupsHandler:
                 if existing_group not in new_unit_groups:
                     removed_groups.append(existing_group)
 
-            if added_groups or removed_groups:
+            if added_groups:
                 logger.info("Initiated update for units groups Information!!")
-                self.create_unit()
-                msg = f"Created unit groups Information: {new_unit_groups}\n"
-                logger.info(msg)
-                self.response_messages += msg
+                created_unit_groups = set()
+                for each_input_unit in self.unit_list:
+                    self.create_unit(each_input_unit=each_input_unit)
+                    created_unit_groups.update(new_unit_groups)
+
+                if created_unit_groups:
+                    msg = f"Created Unit groups:{created_unit_groups}\n"
+                    logger.info(msg)
+                    self.response_messages += msg + "\n"
             else:
                 msg = f"Unit groups Information Exists: {existing_unit_groups}\n"
                 logger.info(msg)
@@ -96,8 +106,14 @@ class UnitGroupsHandler:
                 for col in range(len(keys)):
                     metadata_label = UnitConstants.unit_group_meta_data.get(keys[col].lower(), '')
                     if metadata_label.lower() == 'unit_group_name':
-                        if pd.isna(metadata_value[col]):
-                            self.response_messages += 'Unit Group Name is missing\n'
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f"Unit Group Name is missing in row number {row + 1}.\n"
+                            self.response_messages += error_message
+                            raise ValueError(self.response_messages)
+                    if metadata_label.lower() == 'description':
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f"Unit Description is missing in row number {row + 1}.\n"
+                            self.response_messages += error_message
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -113,27 +129,26 @@ class UnitGroupsHandler:
             self.response_messages += msg
             raise ValueError(self.response_messages)
 
-    def create_unit(self):
+    def create_unit(self, each_input_unit):
         try:
             payload_data = UnitConstants.unit_groups_payload
-            for each_data in self.unit_list:
 
-                payload_data["unit_group_name"] = each_data["unit_group_name"]
-                payload_data["description"] = each_data["description"]
-                url = f'{EnvironmentConstants.base_path}{UnitAPI.save_unit_groups}'
+            payload_data["unit_group_name"] = each_input_unit["unit_group_name"]
+            payload_data["description"] = each_input_unit["description"]
+            url = f'{EnvironmentConstants.base_path}{UnitAPI.save_unit_groups}'
 
-                # Encode payload into JWT
-                if self.encrypt_payload:
-                    payload = JWT().encode(payload=payload_data)
-                    response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
+            # Encode payload into JWT
+            if self.encrypt_payload:
+                payload = JWT().encode(payload=payload_data)
+                response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
+            else:
+                response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
 
-                if response.status_code != 200:
-                    msg = "Failed to fetch unit data\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
+            if response.status_code != 200:
+                msg = "Failed to fetch unit data\n"
+                logger.error(msg)
+                self.response_messages += msg
+                raise HTTPException(status_code=response.status_code, detail=self.response_messages)
         except Exception as metadata_error:
             msg = f"Error while updating the unit data: {metadata_error}\n"
             logger.exception(msg)
@@ -142,36 +157,13 @@ class UnitGroupsHandler:
 
     def list_unit_group_exits(self):
         try:
+            url = f'{EnvironmentConstants.base_path}{UnitAPI.list_unit_groups_data}'
             payload = copy.deepcopy(UnitConstants.unit_content_json)
-            filter_data_template = copy.deepcopy(UnitConstants.unit_groups_filter_data)
-            results = []
 
-            for unit in self.unit_list:
-                filter_data = filter_data_template.copy()
-                filter_data["unit_group_name"]["filter"] = unit.get("unit_group_name", "").strip()
-                payload["filters"]["filterModel"] = filter_data
-
-                url = f'{EnvironmentConstants.base_path}{UnitAPI.list_unit_groups_data}'
-
-                # Encode payload in JWT
-                if self.encrypt_payload:
-                    payload_encoded = JWT().encode(payload=payload)
-                    response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
-                                             cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
-
-                if response.status_code != 200:
-                    msg = f"Failed to fetch unit group data. Status code: {response.status_code}, Response: {response.text}\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
-
-                response_json = response.json()
-                unit_group_data = response_json.get('data', {}).get('bodyContent', [])
-                if unit_group_data:
-                    results.append(unit_group_data[0])
-            return True, results
+            results = PaginationUtils().pagination_function(url=url, payload=payload,
+                                                            encrypt_payload=self.encrypt_payload,
+                                                            login_token=self.login_token)
+            return True, results if results else {}
         except Exception as app_data_error:
             msg = f"Error while fetching unit data: {app_data_error}\n"
             logger.exception(msg)

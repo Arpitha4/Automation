@@ -2,14 +2,14 @@ from scripts.constants import EnvironmentConstants
 
 
 class BaseURLPaths:
-    step_module = '/workflow-mt/step'
     auth_endpoint = f'{EnvironmentConstants.base_path}{EnvironmentConstants.auth_endpoint}?project_id={EnvironmentConstants.project_id}'
-    workflow = '/workflow-mt'
-    workflow_module = f'{workflow}/workflow'
     ilens_module = '/ilens_api/ilens_config'
     hierarchy_module = '/hry/hierarchy'
     parameters = '/hry/parameters'
     units = '/hry/units'
+    hierarchy = '/hry/hry/'
+    asset_model = '/scada_dt/asset'
+    industry = '/ilens_api/industry'
 
 
 class ParametersAPI:
@@ -32,3 +32,19 @@ class UnitAPI:
     list_units_data = f'{BaseURLPaths.units}/list_units'
     get_units_data = f'{BaseURLPaths.units}/get_unit_groups'
     save_units = f'{BaseURLPaths.units}/save_units'
+
+
+class HierarchyAPI:
+    fetch_hierarchy = f'{BaseURLPaths.hierarchy}/fetch_accessible_data'
+    save_hierarchy = f'{BaseURLPaths.hierarchy_module}/save'
+
+
+class AssetModelAPI:
+    asset_model_list = f'{BaseURLPaths.asset_model}/list'
+    save_asset_model = f'{BaseURLPaths.asset_model}/save'
+    drop_down_list = f'{BaseURLPaths.industry}/list_dropdown'
+    asset_tag = f'{BaseURLPaths.ilens_module}/asset_tag_group'
+    asset_tag_meta = f'{BaseURLPaths.ilens_module}/asset_tag_group_meta'
+    add_delete_param = f'{BaseURLPaths.asset_model}/add_delete_param'
+    create_drop_down = f'{BaseURLPaths.industry}/create'
+

@@ -13,6 +13,7 @@ from scripts.constants.app_constants import Secrets, AppConstants
 from scripts.constants.parameter_constants import ParameterConstants
 from scripts.logging.logger import logger
 from scripts.utils.common_utils import CommonUtils
+from scripts.utils.pagination_utils import PaginationUtils
 from scripts.utils.security_utils.jwt_util import JWT
 
 
@@ -72,35 +73,36 @@ class ParameterCreationHandler:
             existing_tag_name = [category["tag_name"].lower() for category in parameter_data]
             new_tag_name = [category["tag_name"].lower() for category in self.parameter_list]
 
-            added_categories = []
-            removed_categories = []
+            added_tags = []
+            existing_tags = []
 
             for new_tag in new_tag_name:
                 if new_tag not in existing_tag_name:
-                    added_categories.append(new_tag)
+                    added_tags.append(new_tag)
 
             for existing_tag in existing_tag_name:
                 if existing_tag not in new_tag_name:
-                    removed_categories.append(existing_tag)
+                    existing_tags.append(existing_tag)
 
-            if added_categories or removed_categories:
+            if added_tags:
                 logger.info("Initiated update for Parameter Information!!")
                 for parameter in self.parameter_list:
                     parameter_values = self.validate_and_collect_values(parameter)
 
                     logger.debug(f"Checking parameter values: {parameter_values}")
 
-                    required_fields = ['data_type_name', 'tag_group_name', 'parameter_category']
-                    missing_fields = [field for field in required_fields if
-                                      not parameter_values.get(field) or parameter_values.get(field) not in labels]
+                    if parameter["system_tag_label"].lower() in ["design", "hmi", "manual", "meta", "product"]:
+                        required_fields = ['data_type_name', 'tag_type_name']
+                        missing_fields = [field for field in required_fields if
+                                          not parameter_values.get(field) or parameter_values.get(field) not in labels]
 
-                    if missing_fields:
-                        msg = f"Parameter creation for '{parameter['tag_name']}' could not be completed due to missing values: {missing_fields}.\n"
-                        logger.info(msg)
-                        self.response_messages += msg
-                        continue
+                        if missing_fields:
+                            msg = f"Parameter creation for '{parameter['tag_name']}' could not be completed due to missing values: {missing_fields}.\n"
+                            logger.info(msg)
+                            self.response_messages += msg
+                            continue
 
-                    logger.info(f"Creating parameter with values: {parameter_values}")
+                    # logger.info(f"Creating parameter with values: {parameter_values}")
                     create_param_data = {
                         'system_tag_label': filter_data_source,
                         'tag_types': filtered_tag_types,
@@ -111,8 +113,8 @@ class ParameterCreationHandler:
                     }
 
                     self.create_parameter(**create_param_data)
-                    msg = f"Completed Parameter Creation: {new_tag_name}\n"
-                    self.response_messages += msg
+                msg = f"Created Parameter Creation: {new_tag_name}\n"
+                self.response_messages += msg
             else:
                 msg = f"Parameter Information Exists:{existing_tag_name}\n"
                 logger.info(msg)
@@ -182,8 +184,14 @@ class ParameterCreationHandler:
                 for col in range(len(keys)):
                     metadata_label = ParameterConstants.meta_data_mapping.get(keys[col].lower(), '')
                     if metadata_label.lower() == 'tag_name':
-                        if pd.isna(metadata_value[col]):
-                            self.response_messages += 'Parameter is missing\n'
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f"Parameter Name is missing in row number {row + 1}.\n"
+                            self.response_messages += error_message
+                            raise ValueError(self.response_messages)
+                    if metadata_label.lower() == 'system_tag_label':
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f"Data Source is missing in row number {row + 1}.\n"
+                            self.response_messages += error_message
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -311,34 +319,12 @@ class ParameterCreationHandler:
     def check_parameter(self):
         try:
             payload = copy.deepcopy(ParameterConstants.parameter_content_json)
-            filter_data_template = copy.deepcopy(ParameterConstants.parameter_filter_model)
-            results = []
+            url = f'{EnvironmentConstants.base_path}{ParametersAPI.get_parameter_content}'
+            results = PaginationUtils().pagination_function(url=url, payload=payload,
+                                                            encrypt_payload=self.encrypt_payload,
+                                                            login_token=self.login_token)
 
-            for each_data in self.parameter_list:
-                filter_data = filter_data_template.copy()
-                filter_data['tag_name']['filter'] = each_data.get('tag_name', '').strip()
-                payload['filters']['filterModel'] = filter_data
-
-                url = f'{EnvironmentConstants.base_path}{ParametersAPI.get_parameter_content}'
-                if self.encrypt_payload:
-                    payload_encoded = JWT().encode(payload=payload)
-                    response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
-                                             cookies=self.login_token)
-                else:
-                    response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
-
-                if response.status_code != 200:
-                    msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
-                    logger.error(msg)
-                    self.response_messages += msg
-                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
-
-                response_json = response.json()
-                parameter_category_data = response_json.get('data', {}).get('bodyContent', [])
-                if parameter_category_data:
-                    results.append(parameter_category_data[0])
-
-            return True, results
+            return True, results if results else {}
         except Exception as app_data_error:
             msg = f"Error while fetching parameter data: {app_data_error}\n"
             logger.exception(msg)

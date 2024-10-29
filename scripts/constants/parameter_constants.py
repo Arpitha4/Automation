@@ -24,7 +24,7 @@ class ParameterConstants:
     parameter_category_filter_model = {"tag_category_name": {
         "filterType": "text",
         "type": "contains",
-        "filter": "test_1"
+        "filter": ""
     }}
 
     parameter_json = {

@@ -38,7 +38,7 @@ class ParameterCategoryHandler:
 
             _, parameter_category_data = self.check_parameter_categories_exits()
 
-            existing_tag_categories = [category["tag_category_name"].lower() for category in parameter_category_data]
+            existing_tag_categories = [category["label"].lower() for category in parameter_category_data]
             new_tag_categories = [category["tag_category_name"].lower() for category in self.parameter_list]
 
             added_categories = []
@@ -52,12 +52,17 @@ class ParameterCategoryHandler:
                 if existing_tag not in new_tag_categories:
                     removed_categories.append(existing_tag)
 
-            if added_categories or removed_categories:
+            if added_categories:
                 logger.info("Initiated update for Parameter Category Information!!")
-                self.create_parameter_category()
-                msg = f"Created Parameter Category Information : {new_tag_categories} "
-                logger.info(msg)
-                self.response_messages += msg
+                created_parameter_category = set()
+                for each_input_parameter in self.parameter_list:
+                    self.create_parameter_category(each_input_parameter=each_input_parameter)
+                    created_parameter_category.update(new_tag_categories)
+
+                if created_parameter_category:
+                    msg = f"Created Parameter Category Information: {created_parameter_category}\n"
+                    logger.info(msg)
+                    self.response_messages += msg + "\n"
 
                 if added_categories:
                     logger.info(f"Added categories: {', '.join(added_categories)}")
@@ -111,9 +116,9 @@ class ParameterCategoryHandler:
                 for col in range(len(keys)):
                     metadata_label = ParameterConstants.parameter_category_meta_data.get(keys[col].lower(), '')
                     if metadata_label.lower() == 'tag_category_name':
-                        if pd.isna(metadata_value[col]):
-                            self.response_messages += 'Parameter Category is missing\n'
-                            logger.error("Parameter Category is missing in row %d", row)
+                        if pd.isna(metadata_value[col]) or metadata_value[col].strip() == "":
+                            error_message = f"Parameter Category Name is missing in row number {row + 1}.\n"
+                            self.response_messages += error_message
                             raise ValueError(self.response_messages)
                     if metadata_label:
                         value = metadata_value[col]
@@ -129,32 +134,31 @@ class ParameterCategoryHandler:
             self.response_messages += msg
             raise ValueError(self.response_messages)
 
-    def create_parameter_category(self):
+    def create_parameter_category(self, each_input_parameter):
         try:
             payload_data = copy.deepcopy(ParameterConstants.parameter_category_json)
-            for each_data in self.parameter_list:
-                payload_data["tag_category_name"] = each_data.get('tag_category_name', '')
-                payload_data["description"] = each_data.get('description', '')
-                payload_data["tag_category_icon"] = each_data.get('tag_category_icon', '')
+            payload_data["tag_category_name"] = each_input_parameter.get('tag_category_name', '')
+            payload_data["description"] = each_input_parameter.get('description', '')
+            payload_data["tag_category_icon"] = each_input_parameter.get('tag_category_icon', '')
 
-                url = f'{EnvironmentConstants.base_path}{ParametersAPI.save_parameter_category}'
+            url = f'{EnvironmentConstants.base_path}{ParametersAPI.save_parameter_category}'
 
-                try:
-                    # encode payload into JWT
-                    if self.encrypt_payload:
-                        payload = JWT().encode(payload=payload_data)
-                        response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
-                    else:
-                        response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
+            try:
+                # encode payload into JWT
+                if self.encrypt_payload:
+                    payload = JWT().encode(payload=payload_data)
+                    response = requests.post(url, data=payload, headers=Secrets.headers, cookies=self.login_token)
+                else:
+                    response = requests.post(url, json=payload_data, headers=Secrets.headers, cookies=self.login_token)
 
-                    if response.status_code != 200:
-                        msg = "Failed to fetch parameter category data\n"
-                        logger.error(msg)
-                        self.response_messages += msg
-                        raise HTTPException(status_code=response.status_code, detail=self.response_messages)
-                except requests.RequestException as request_error:
-                    logger.error(f"Request error during category creation: {request_error}")
-                    raise HTTPException
+                if response.status_code != 200:
+                    msg = "Failed to fetch parameter category data\n"
+                    logger.error(msg)
+                    self.response_messages += msg
+                    raise HTTPException(status_code=response.status_code, detail=self.response_messages)
+            except requests.RequestException as request_error:
+                logger.error(f"Request error during category creation: {request_error}")
+                raise HTTPException
 
         except Exception as metadata_error:
             msg = f"Error while creating the parameter category: {metadata_error}\n"
@@ -164,39 +168,27 @@ class ParameterCategoryHandler:
 
     def check_parameter_categories_exits(self):
         try:
-            payload = copy.deepcopy(ParameterConstants.parameter_content_json)
-            filter_data_template = copy.deepcopy(ParameterConstants.parameter_category_filter_model)
-            results = []
+            payload = copy.deepcopy(ParameterConstants.list_parameter_category)
 
-            for each_data in self.parameter_list:
-                filter_data = filter_data_template.copy()
-                filter_data['tag_category_name']['filter'] = each_data.get('tag_category_name', '').strip()
-                payload['filters']['filterModel'] = filter_data
+            url = f'{EnvironmentConstants.base_path}{ParametersAPI.list_parameter_category}'
+            if self.encrypt_payload:
+                payload_encoded = JWT().encode(payload)
+                response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
+                                         cookies=self.login_token)
+            else:
+                response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
 
-                url = f'{EnvironmentConstants.base_path}{ParametersAPI.content_parameter_category}'
-                try:
-                    if self.encrypt_payload:
-                        payload_encoded = JWT().encode(payload=payload)
-                        response = requests.post(url, data=payload_encoded, headers=Secrets.headers,
-                                                 cookies=self.login_token)
-                    else:
-                        response = requests.post(url, json=payload, headers=Secrets.headers, cookies=self.login_token)
+            if response.status_code != 200:
+                msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
+                logger.error(msg)
+                self.response_messages += msg
+                raise HTTPException(status_code=response.status_code, detail=self.response_messages)
 
-                    if response.status_code != 200:
-                        msg = f"Failed to fetch parameter data. Status code: {response.status_code}, Response: {response.text}\n"
-                        logger.error(msg)
-                        self.response_messages += msg
-                        raise HTTPException(status_code=response.status_code, detail=self.response_messages)
-
-                    response_json = response.json()
-                    parameter_category_data = response_json.get('data', {}).get('bodyContent', [])
-                    if parameter_category_data:
-                        results.append(parameter_category_data[0])
-                except requests.RequestException as request_error:
-                    logger.error(f"Request error while checking category existence: {request_error}")
-                    raise HTTPException
-
-            return True, results
+            response_json = response.json()
+            parameter_category = response_json.get('data', {})
+            if parameter_category:
+                return True, parameter_category
+            return False, {}
         except Exception as app_data_error:
             msg = f"Error while fetching parameter data: {app_data_error}\n"
             logger.exception(msg)
